@@ -4,6 +4,7 @@ import { Button } from ".";
 const meta = {
   title: "Components/Button",
   component: Button,
+  tags: ["autodocs"],
   parameters: {
     layout: "centered",
   },
@@ -48,42 +49,19 @@ export const Default: Story = {
   },
 };
 
-export const Destructive: Story = {
-  args: {
-    variant: "destructive",
-  },
-};
-
 export const Outline: Story = {
   args: {
     variant: "outline",
   },
 };
 
-export const Secondary: Story = {
-  args: {
-    variant: "secondary",
+export const Group: Story = {
+  render: (args) => {
+    return (
+      <div className="flex flex-col gap-4 sm:flex-row">
+        <Button {...args} variant="outline" />
+        <Button {...args} variant="default" />
+      </div>
+    );
   },
 };
-
-export const Ghost: Story = {
-  args: {
-    variant: "ghost",
-  },
-};
-
-export const Link: Story = {
-  args: {
-    variant: "link",
-  },
-};
-
-// export const ButtonThatLinkToAnotherPlace: Story = {
-//   render: (args) => {
-//     return (
-//       <Button {...args} asChild>
-//         <a href="#">{args.children}</a>
-//       </Button>
-//     );
-//   },
-// };

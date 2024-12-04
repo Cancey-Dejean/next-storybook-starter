@@ -1,93 +1,132 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+/* Shadcn UI Colors */
+/* --background: --color-white;
+--foreground: --color-border;
+--card: --color-white;
+--card-foreground: --color-border;
+--popover: --color-white;
+--popover-foreground: --color-border;
+--primary: --color-brand;
+--primary-foreground: 0 0% 98%;
+--secondary: --color-secondary;
+--secondary-foreground: --color-brand;
+--muted: --color-secondary;
+--muted-foreground: #71717a;
+--accent: --color-secondary;
+--accent-foreground: --color-brand;
+--destructive: --color-error;
+--destructive-foreground: --color-white;
+--border: --color-gray;
+--input: --color-gray;
+--ring: --color-border;
+--chart-1: 12 76% 61%;
+--chart-2: 173 58% 39%;
+--chart-3: 197 37% 24%;
+--chart-4: 43 74% 66%;
+--chart-5: 27 87% 67%; */
+/* End of Shadcn UI Colors */
+
+@theme {
+  --font-*: initial;
+  --text-*: initial;
+  --color-*: initial;
+  --radius-*: initial;
+
+  --color-transparent: transparent;
+
+  /**
+    * @tokens Color
+    * @presenter Color
+  */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-secondary: #f4f4f5;
+  --color-gray: #414651;
+  --color-brand-25: #fcfaff;
+  --color-brand-50: #f9f5ff;
+  --color-brand-100: #f4ebff;
+  --color-brand-200: #e9d7fe;
+  --color-brand-300: #d6bbfb;
+  --color-brand-400: #b692f6;
+  --color-brand-500: #9e77ed;
+  --color-brand-600: #7f56d9;
+  --color-brand-700: #6941c6;
+  --color-brand-800: #53389e;
+  --color-brand-900: #42307d;
+  --color-brand-950: #2c1c5f;
+  --color-error: #d92d20;
+  --color-warning: #f79009;
+  --color-success: #17b26a;
+  --color-border: #09090b;
+
+  /**
+    * @tokens BorderRadius
+    * @presenter BorderRadius
+  */
+  --radius-none: 0rem; /* 0px */
+  --radius-xxs: 0.125rem; /* 2px */
+  --radius-xs: 0.25rem; /* 4px */
+  --radius-sm: 0.375rem; /* 6px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 0.625rem; /* 10px */
+  --radius-xl: 0.75rem; /* 12px */
+  --radius-2xl: 1rem; /* 16px */
+  --radius-3xl: 1.25rem; /* 20px */
+  --radius-4xl: 1.5rem; /* 24px */
+  --radius-full: 624.938rem; /* 9999px */
+
+  /**
+    * @tokens FontSize
+  */
+  --text-display-2xl: clamp(3rem, 2.571rem + 2.14vw, 4.5rem); /* 48px - 72px */
+  --text-display-xl: clamp(
+    2.25rem,
+    1.821rem + 2.14vw,
+    3.75rem
+  ); /* 36px - 60px */
+  --text-display-sm: clamp(
+    1.5rem,
+    1.389rem + 0.56vw,
+    1.875rem
+  ); /* 24px - 30px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-base: 1rem; /* 16px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-xs: 0.75rem; /* 12px */
 }
 
 @layer base {
-  :root {
-    /**
-      * @tokens Color
-      * @presenter Color
-    */
-    --color-neutral-0: #000;
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+    scroll-behavior: smooth;
   }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
 
-@layer base {
-  * {
-    @apply border-border;
-  }
   body {
-    @apply bg-background text-foreground;
+    @apply mx-auto text-base text-black antialiased dark:text-black;
   }
 }
+
+/* Storybook Styles ONLY: DO NOT DELETE */
+
+.sbdocs-content {
+  @apply !mx-auto !max-w-[1920px];
+}
+
+/* Token Card Styles */
+.css-11igmw9 {
+  @apply relative !gap-10;
+}
+.css-1lkb4bw {
+  @apply relative !overflow-visible !p-0 text-center !shadow-none;
+}
+
+.css-11igmw9 {
+  @apply !mt-10;
+}
+
+/* End Storybook Styles */

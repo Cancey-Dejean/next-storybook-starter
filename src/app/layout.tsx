@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import Providers from "@/components/providers";
+import "./globals.css";
+import { inter } from "@/utils/fonts";
 
-import { geistMono, geistSans } from "@/utils/fonts";
 import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
 
@@ -18,9 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${inter.variable}`}>
         <Providers>
           <div className="grid min-h-[100dvh] grid-rows-[auto_1fr_auto]">
             <Header />

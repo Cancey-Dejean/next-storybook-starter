@@ -1,0 +1,14 @@
+import { DesignTokenDocBlock } from "storybook-design-token";
+import { Meta } from "@storybook/blocks";
+import { BorderRadiusPresenter } from "./presenters/BorderRadiusPresenter";
+
+<Meta title="Tokens/BorderRadius" />
+
+# Border Radius
+
+<DesignTokenDocBlock
+  categoryName="BorderRadius"
+  viewType="card"
+  showValueColumn={false}
+  presenters={{ BorderRadius: BorderRadiusPresenter }}
+/>
