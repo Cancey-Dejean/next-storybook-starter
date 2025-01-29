@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from ".";
+import { BUTTON_SIZES, BUTTON_VARIANTS } from "@/constants";
 
 const meta = {
   title: "Components/Button",
   component: Button,
-  tags: ["autodocs"],
+
   parameters: {
     layout: "centered",
   },
@@ -12,19 +13,12 @@ const meta = {
     variant: {
       description: "The variant of the button",
       control: { type: "select" },
-      options: [
-        "default",
-        "destructive",
-        "outline",
-        "secondary",
-        "ghost",
-        "link",
-      ],
+      options: BUTTON_VARIANTS,
     },
     size: {
       description: "The size of the button",
       control: { type: "select" },
-      options: ["default", "sm", "lg", "icon"],
+      options: BUTTON_SIZES,
     },
     asChild: {
       description:
@@ -52,16 +46,5 @@ export const Default: Story = {
 export const Outline: Story = {
   args: {
     variant: "outline",
-  },
-};
-
-export const Group: Story = {
-  render: (args) => {
-    return (
-      <div className="flex flex-col gap-4 sm:flex-row">
-        <Button {...args} variant="outline" />
-        <Button {...args} variant="default" />
-      </div>
-    );
   },
 };

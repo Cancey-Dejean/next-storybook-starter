@@ -3,8 +3,8 @@ import Providers from "@/components/providers";
 import "./globals.css";
 import { inter } from "@/utils/fonts";
 
-import Header from "@/components/ui/Header";
-import Footer from "@/components/ui/Footer";
+import Header from "@/components/blocks/Header";
+import Footer from "@/components/blocks/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable}`}>
+      <body className={inter.variable}>
         <Providers>
           <div className="grid min-h-[100dvh] grid-rows-[auto_1fr_auto]">
             <Header />

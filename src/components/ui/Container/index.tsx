@@ -1,11 +1,12 @@
 import { cn } from "@/lib/utils";
 
 const containerSizes = {
-  base: "max-w-[1240px]",
+  wide: "max-w-[1600px]",
+  base: "max-w-[1440px]",
 };
 
 export default function Container({
-  size = "base",
+  size = "wide",
   children,
   className,
 }: {
