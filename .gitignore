@@ -28,10 +28,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
 
-# env files (can opt-in for commiting if needed)
-.env.local
-.env
+# env files (can opt-in for committing if needed)
+.env*
 
 # vercel
 .vercel
@@ -41,3 +41,4 @@ yarn-error.log*
 next-env.d.ts
 
 *storybook.log
+storybook-static
