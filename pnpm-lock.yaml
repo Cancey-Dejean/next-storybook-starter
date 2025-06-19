@@ -51,6 +51,9 @@ importers:
       '@storybook/addon-docs':
         specifier: ^9.0.12
         version: 9.0.12(@types/react@19.1.8)(storybook@9.0.12(@testing-library/dom@10.4.0)(prettier@3.5.3))
+      '@storybook/addon-links':
+        specifier: ^9.0.12
+        version: 9.0.12(react@19.1.0)(storybook@9.0.12(@testing-library/dom@10.4.0)(prettier@3.5.3))
       '@storybook/addon-vitest':
         specifier: ^9.0.12
         version: 9.0.12(@vitest/browser@3.2.4)(@vitest/runner@3.2.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(storybook@9.0.12(@testing-library/dom@10.4.0)(prettier@3.5.3))(vitest@3.2.4)
@@ -78,6 +81,9 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^3.2.4
         version: 3.2.4(@vitest/browser@3.2.4)(vitest@3.2.4)
+      '@whitespace/storybook-addon-html':
+        specifier: ^7.0.0
+        version: 7.0.0(storybook@9.0.12(@testing-library/dom@10.4.0)(prettier@3.5.3))
       eslint:
         specifier: ^9
         version: 9.29.0(jiti@2.4.2)
@@ -813,6 +819,15 @@ packages:
     peerDependencies:
       storybook: ^9.0.12
 
+  '@storybook/addon-links@9.0.12':
+    resolution: {integrity: sha512-Ix7WXnCMkEWrgBrGCoZAFH276Xj/4g8e5Kao9BSZneUBjJJC2LuCaTftGeiM4kQ7sKBPOc/L6zIyusWckBvXIQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
+      storybook: ^9.0.12
+    peerDependenciesMeta:
+      react:
+        optional: true
+
   '@storybook/addon-vitest@9.0.12':
     resolution: {integrity: sha512-f3JPzQ9c7V06VsTFCNWzNmFhGvMPvZePVxPprzacEwAACU5GmRJ8lBqIFPyQALCMGKvaxqv0zbUwWEAsex7FQA==}
     peerDependencies:
@@ -1275,6 +1290,11 @@ packages:
 
   '@vitest/utils@3.2.4':
     resolution: {integrity: sha512-fB2V0JFrQSMsCo9HiSq3Ezpdv4iYaXRG1Sx8edX3MwxfyNn83mKiGzOcH+Fkxt4MHxr3y42fQi1oeAInqgX2QA==}
+
+  '@whitespace/storybook-addon-html@7.0.0':
+    resolution: {integrity: sha512-GCpy1Xch7v3UZ/TmKUFnF0lFEt6qct/zqO/64LfoEOwr3zV5YDdidHBURSNp5qK8Q68wPLs/nVhbAzAEvudR8w==}
+    peerDependencies:
+      storybook: ^8.2.0
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -3777,6 +3797,13 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
+  '@storybook/addon-links@9.0.12(react@19.1.0)(storybook@9.0.12(@testing-library/dom@10.4.0)(prettier@3.5.3))':
+    dependencies:
+      '@storybook/global': 5.0.0
+      storybook: 9.0.12(@testing-library/dom@10.4.0)(prettier@3.5.3)
+    optionalDependencies:
+      react: 19.1.0
+
   '@storybook/addon-vitest@9.0.12(@vitest/browser@3.2.4)(@vitest/runner@3.2.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(storybook@9.0.12(@testing-library/dom@10.4.0)(prettier@3.5.3))(vitest@3.2.4)':
     dependencies:
       '@storybook/global': 5.0.0
@@ -4289,6 +4316,10 @@ snapshots:
       '@vitest/pretty-format': 3.2.4
       loupe: 3.1.4
       tinyrainbow: 2.0.0
+
+  '@whitespace/storybook-addon-html@7.0.0(storybook@9.0.12(@testing-library/dom@10.4.0)(prettier@3.5.3))':
+    dependencies:
+      storybook: 9.0.12(@testing-library/dom@10.4.0)(prettier@3.5.3)
 
   acorn-jsx@5.3.2(acorn@8.15.0):
     dependencies:
